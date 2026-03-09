@@ -1,0 +1,39 @@
+Parameter summary
+======================================================================
+  state_lstm.weight_ih_l0                                            shape=[512, 128]            norm=41.5179
+  state_lstm.weight_hh_l0                                            shape=[512, 128]            norm=38.5444
+  state_lstm.bias_ih_l0                                              shape=[512]                 norm=2.3059
+  state_lstm.bias_hh_l0                                              shape=[512]                 norm=2.2101
+  state_lstm.weight_ih_l1                                            shape=[512, 128]            norm=38.3085
+  state_lstm.weight_hh_l1                                            shape=[512, 128]            norm=32.7607
+  state_lstm.bias_ih_l1                                              shape=[512]                 norm=2.3973
+  state_lstm.bias_hh_l1                                              shape=[512]                 norm=2.3551
+  fc_v.weight                                                        shape=[1, 128]              norm=2.1548
+  fc_v.bias                                                          shape=[1]                   norm=0.1337
+  fc_a.weight                                                        shape=[1, 128]              norm=2.9192
+  fc_a.bias                                                          shape=[1]                   norm=0.0190
+  pred_1st.weight                                                    shape=[15, 128]             norm=2.2547
+  pred_1st.bias                                                      shape=[15]                  norm=0.1973
+  call_transformer.embeddings.word_embeddings.weight                 shape=[30522, 128]          norm=110.0031
+  call_transformer.embeddings.position_embeddings.weight             shape=[512, 128]            norm=15.1172
+  call_transformer.embeddings.token_type_embeddings.weight           shape=[2, 128]              norm=0.4303
+  call_transformer.embeddings.LayerNorm.weight                       shape=[128]                 norm=14.4981
+  call_transformer.embeddings.LayerNorm.bias                         shape=[128]                 norm=2.8065
+  call_transformer.encoder.layer.0.attention.self.query.weight       shape=[128, 128]            norm=10.9825
+  call_transformer.encoder.layer.0.attention.self.query.bias         shape=[128]                 norm=2.7715
+  call_transformer.encoder.layer.0.attention.self.key.weight         shape=[128, 128]            norm=10.6666
+  call_transformer.encoder.layer.0.attention.self.key.bias           shape=[128]                 norm=0.4903
+  call_transformer.encoder.layer.0.attention.self.value.weight       shape=[128, 128]            norm=14.4333
+  call_transformer.encoder.layer.0.attention.self.value.bias         shape=[128]                 norm=1.1510
+  call_transformer.encoder.layer.0.attention.output.dense.weight     shape=[128, 128]            norm=14.5907
+  call_transformer.encoder.layer.0.attention.output.dense.bias       shape=[128]                 norm=1.1956
+  call_transformer.encoder.layer.0.attention.output.LayerNorm.weight  shape=[128]                 norm=13.3428
+  call_transformer.encoder.layer.0.attention.output.LayerNorm.bias   shape=[128]                 norm=6.8779
+  call_transformer.encoder.layer.0.intermediate.dense.weight         shape=[512, 128]            norm=28.6238
+  call_transformer.encoder.layer.0.intermediate.dense.bias           shape=[512]                 norm=5.7851
+  call_transformer.encoder.layer.0.output.dense.weight               shape=[128, 512]            norm=29.0656
+  call_transformer.encoder.layer.0.output.dense.bias                 shape=[128]                 norm=1.5136
+  call_transformer.encoder.layer.0.output.LayerNorm.weight           shape=[128]                 norm=20.6535
+  call_transformer.encoder.layer.0.output.LayerNorm.bias             shape=[128]                 norm=2.1788
+  call_transformer.pooler.dense.weight                               shape=[128, 128]            norm=10.7509
+  call_transformer.pooler.dense.bias                                 shape=[128]                 norm=0.8567
