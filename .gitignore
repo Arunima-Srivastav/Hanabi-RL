@@ -26,3 +26,7 @@ say-select/exps/*
 models/
 obl_models/
 third_party/pybind11/
+hanabi-learning-environment/hanabi_lib/tokenizers-cpp
+
+# PyTorch checkpoints (100MB+; GitHub rejects — keep local only)
+*.pt

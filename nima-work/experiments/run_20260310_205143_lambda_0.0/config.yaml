@@ -1,0 +1,40 @@
+collect:
+  epsilon_decay_epochs: 500
+  epsilon_end: 0.1
+  epsilon_start: 1.0
+  num_games_per_epoch: 10
+device: cuda
+env:
+  hand_size: 5
+  max_hint_tokens: 8
+  max_life_tokens: 3
+  num_colors: 5
+  num_players: 2
+  num_ranks: 5
+logging:
+  log_freq: 10
+  save_dir: experiments
+  save_freq: 50
+  use_wandb: false
+  wandb_project: hanabi-temporal-kl
+model:
+  freeze_bert: false
+  hidden_dim: 512
+  num_lstm_layers: 2
+  pretrained_model: cross-encoder/ms-marco-TinyBERT-L-2-v2
+replay:
+  buffer_size: 10000
+  burn_in_frames: 500
+rl:
+  gamma: 0.99
+  multi_step: 1
+seed: 43
+temporal_reg_lambda: 0.0
+training:
+  batch_size: 32
+  epoch_len: 100
+  eps: 1.5e-05
+  grad_clip: 5.0
+  lr: 6.25e-05
+  num_epochs: 1000
+  target_sync_freq: 100

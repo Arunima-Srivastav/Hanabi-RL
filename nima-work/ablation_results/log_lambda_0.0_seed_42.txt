@@ -1,0 +1,67 @@
+Saving to: experiments\run_20260310_205137_lambda_0.0
+Temporal regularization lambda: 0.0
+Loading weights:   0%|          | 0/39 [00:00<?, ?it/s]Loading weights: 100%|##########| 39/39 [00:00<00:00, 12664.75it/s]
+[1mBertModel LOAD REPORT[0m from: cross-encoder/ms-marco-TinyBERT-L-2-v2
+Key                          | Status     |  | 
+-----------------------------+------------+--+-
+classifier.weight            | UNEXPECTED |  | 
+bert.embeddings.position_ids | UNEXPECTED |  | 
+classifier.bias              | UNEXPECTED |  | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "C:\Users\aruas\Documents\Hanabi-RL\nima-work\train.py", line 303, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\aruas\Documents\Hanabi-RL\nima-work\train.py", line 299, in main
+    train(config, args)
+    ~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\aruas\Documents\Hanabi-RL\nima-work\train.py", line 174, in train
+    agent = R2D2Agent(
+        device=device,
+    ...<7 lines>...
+        freeze_bert=config["model"]["freeze_bert"],
+    )
+  File "C:\Users\aruas\Documents\Hanabi-RL\nima-work\agent.py", line 47, in __init__
+    self.online_net = TextLSTMNetWithSectionAttention(
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        device=device,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        freeze_bert=freeze_bert,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aruas\Documents\Hanabi-RL\nima-work\networks\q_net.py", line 138, in __init__
+    self.to(device)
+    ~~~~~~~^^^^^^^^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 1381, in to
+    return self._apply(convert)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 964, in _apply
+    param_applied = fn(param)
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\nn\modules\module.py", line 1367, in convert
+    return t.to(
+           ~~~~^
+        device,
+        ^^^^^^^
+        dtype if t.is_floating_point() or t.is_complex() else None,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        non_blocking,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aruas\miniconda3\Lib\site-packages\torch\cuda\__init__.py", line 417, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

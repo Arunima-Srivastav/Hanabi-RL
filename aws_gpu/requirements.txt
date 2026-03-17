@@ -1,0 +1,14 @@
+# Core ML
+transformers>=4.30
+numpy
+pyyaml
+tqdm
+
+# Visualization
+matplotlib
+
+# Logging
+wandb
+
+# Note: PyTorch with CUDA is installed separately via setup.sh
+# using: pip install torch --index-url https://download.pytorch.org/whl/cu118

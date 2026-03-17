@@ -1,0 +1,60 @@
+# FIXED configuration - avoid attention collapse
+# For g4dn.xlarge (T4 GPU, 16GB VRAM)
+
+# Environment settings
+env:
+  num_players: 2
+  hand_size: 5
+  num_colors: 5
+  num_ranks: 5
+  max_hint_tokens: 8
+  max_life_tokens: 3
+
+# Model settings  
+model:
+  hidden_dim: 512
+  num_lstm_layers: 2
+  pretrained_model: "cross-encoder/ms-marco-TinyBERT-L-2-v2"
+  freeze_bert: false
+
+# RL settings
+rl:
+  gamma: 0.999
+  multi_step: 3
+
+# Temporal KL regularization - MUCH LOWER to prevent attention collapse
+temporal_reg_lambda: 0.001  # Was 0.01, caused collapse. Try 0.001
+
+# Training settings (for g4dn.xlarge T4)
+training:
+  num_epochs: 500
+  epoch_len: 150
+  batch_size: 64         # T4 has 16GB, use 64
+  lr: 0.0001
+  eps: 0.00001
+  grad_clip: 5.0
+  target_sync_freq: 50
+
+# Replay buffer settings
+replay:
+  buffer_size: 30000
+  burn_in_frames: 1000
+
+# Data collection
+collect:
+  num_games_per_epoch: 20
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_epochs: 150
+
+# Logging
+logging:
+  save_dir: "experiments"
+  log_freq: 5
+  save_freq: 25
+  use_wandb: false
+  wandb_project: "hanabi-temporal-kl"
+
+# Device
+device: "cuda"
+seed: 42

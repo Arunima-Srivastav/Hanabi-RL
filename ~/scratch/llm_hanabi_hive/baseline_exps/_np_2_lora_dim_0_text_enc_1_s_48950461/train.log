@@ -1,0 +1,113 @@
+{'act_base_eps': 0.1,
+ 'act_device': 'cpu',
+ 'act_eps_alpha': 7,
+ 'actor_sync_freq': 10,
+ 'aux_weight': 0,
+ 'batchsize': 96,
+ 'bomb': 0,
+ 'burn_in_frames': 10000,
+ 'config': 'pyhanabi/configs/iql.yaml',
+ 'do_eval': 1,
+ 'epoch_len': 500,
+ 'eps': 1.5e-05,
+ 'gamma': 0.999,
+ 'grad_clip': 5,
+ 'hand_size': 5,
+ 'llm_noise': 0.0,
+ 'llm_noise_seed': 97,
+ 'llm_prior': None,
+ 'lm_weights': 1,
+ 'load_model': None,
+ 'lora_dim': 0,
+ 'lr': 6.25e-05,
+ 'max_len': 80,
+ 'multi_step': 1,
+ 'net': 'drrn-lstm',
+ 'num_color': 5,
+ 'num_epoch': 2000,
+ 'num_eps': 80,
+ 'num_game_per_thread': 120,
+ 'num_hint': 8,
+ 'num_lstm_layer': 2,
+ 'num_of_additional_layer': 1,
+ 'num_player': 2,
+ 'num_rank': 5,
+ 'num_thread': 40,
+ 'num_update_between_sync': 2500,
+ 'pikl_anneal_per': 10,
+ 'pikl_anneal_rate': 0.5,
+ 'pikl_beta': 1,
+ 'pikl_lambda': 0.15,
+ 'prefetch': 3,
+ 'replay_buffer_size': 50000,
+ 'rnn_hid_dim': 512,
+ 'save_dir': '~/scratch/llm_hanabi_hive/baseline_exps/_np_2_lora_dim_0_text_enc_1_s_48950461',
+ 'save_per': 50,
+ 'seed': 48950461,
+ 'shuffle_color': 0,
+ 'target_data_ratio': 2,
+ 'temporal_reg_lambda': 0.0,
+ 'temporal_save_dir': None,
+ 'train_device': 'cpu',
+ 'update_freq_text_enc': 1,
+ 'vdn': 0,
+ 'wandb': 0}
+OMP_NUM_THREADS None
+CUDA not available; using CPU for train and act devices.
+R2D2Agent(
+  (online_net): TextLSTMNet(
+    (state_lstm): RecursiveScriptModule(original_name=LSTM)
+    (fc_v): RecursiveScriptModule(original_name=Linear)
+    (fc_a): RecursiveScriptModule(original_name=Linear)
+    (pred_1st): RecursiveScriptModule(original_name=Linear)
+    (call_transformer): BertModel(
+      original_name=BertModel
+      (embeddings): BertEmbeddings(
+        original_name=BertEmbeddings
+        (word_embeddings): Embedding(original_name=Embedding)
+        (position_embeddings): Embedding(original_name=Embedding)
+        (token_type_embeddings): Embedding(original_name=Embedding)
+        (LayerNorm): LayerNorm(original_name=LayerNorm)
+        (dropout): Dropout(original_name=Dropout)
+      )
+      (encoder): BertEncoder(
+        original_name=BertEncoder
+        (layer): ModuleList(original_name=ModuleList)
+      )
+      (pooler): BertPooler(
+        original_name=BertPooler
+        (dense): Linear(original_name=Linear)
+        (activation): Tanh(original_name=Tanh)
+      )
+    )
+  )
+  (target_net): TextLSTMNet(
+    (state_lstm): RecursiveScriptModule(original_name=LSTM)
+    (fc_v): RecursiveScriptModule(original_name=Linear)
+    (fc_a): RecursiveScriptModule(original_name=Linear)
+    (pred_1st): RecursiveScriptModule(original_name=Linear)
+    (call_transformer): BertModel(
+      original_name=BertModel
+      (embeddings): BertEmbeddings(
+        original_name=BertEmbeddings
+        (word_embeddings): Embedding(original_name=Embedding)
+        (position_embeddings): Embedding(original_name=Embedding)
+        (token_type_embeddings): Embedding(original_name=Embedding)
+        (LayerNorm): LayerNorm(original_name=LayerNorm)
+        (dropout): Dropout(original_name=Dropout)
+      )
+      (encoder): BertEncoder(
+        original_name=BertEncoder
+        (layer): ModuleList(original_name=ModuleList)
+      )
+      (pooler): BertPooler(
+        original_name=BertPooler
+        (dense): Linear(original_name=Linear)
+        (activation): Tanh(original_name=Tanh)
+      )
+    )
+  )
+)
+Selfplay Group Created
+Finished creating 40 threads with 4800 games and 9600 actors
+Running initial evaluation (1000 games, may take several min on CPU)...
